@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 2fbafb859fca1f94ea0e0c01c87d3d93
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - TimeControllerPrefab: {fileID: 9038240383546526004, guid: d9556b5021728bf4c823783b379e99f1, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
