@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using ScriptableObjectArchitecture;
 
 
 namespace TimeControl
@@ -16,7 +16,10 @@ namespace TimeControl
         // parameters or properties for control
         public Vector2 position;
         public Vector2 velocity;
+        public bool meshRenderer;
 
+
+        public GameEvent _onEnemiesDisapeard;
 
 
         public virtual void TimeStart()

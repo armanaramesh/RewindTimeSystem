@@ -2,23 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TimeControl;
-using ScriptableObjectArchitecture;
+
 
 public class Enemy : TimeControlled
 {
 
-    public GameEvent onEnemiesDisapeard;
+    
 
     public override void TimeStart()
     {
+        meshRenderer = true;
         StartCoroutine(deactivator());
     }
 
     IEnumerator deactivator()
     {
         yield return new WaitForSeconds(5f);
-        onEnemiesDisapeard.Raise();
-        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        
+        meshRenderer = false;
 
     }
 
@@ -29,6 +30,8 @@ public class Enemy : TimeControlled
         Vector2 pos = transform.position;
         pos.x += Time.deltaTime;
         transform.position = pos;
+
+        this.gameObject.GetComponent<MeshRenderer>().enabled = meshRenderer;
 
 
     }

@@ -195,8 +195,8 @@
     <Compile Include="Assets\SO Architecture\Events\Game Events\FloatGameEvent.cs" />
     <Compile Include="Assets\SO Architecture\Events\Responses\ShortUnityEvent.cs" />
     <Compile Include="Assets\SO Architecture\Events\Listeners\Vector2GameEventListener.cs" />
-    <Compile Include="Assets\SO Architecture\References\Vector3Reference.cs" />
     <Compile Include="Assets\SO Architecture\References\StringReference.cs" />
+    <Compile Include="Assets\SO Architecture\References\Vector3Reference.cs" />
     <Compile Include="Assets\SO Architecture\Events\Game Events\ShortGameEvent.cs" />
     <Compile Include="Assets\SO Architecture\Variables\CharVariable.cs" />
     <Compile Include="Assets\SO Architecture\Events\Game Events\Vector4GameEvent.cs" />
