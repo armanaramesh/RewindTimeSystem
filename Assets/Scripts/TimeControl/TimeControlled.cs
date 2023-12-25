@@ -18,6 +18,13 @@ namespace TimeControl
         public Vector2 velocity;
         public bool meshRenderer;
 
+        //for animation clip control
+        public float animTime;
+        public AnimationClip currentAnim;
+        
+
+
+
 
         public GameEvent _onEnemiesDisapeard;
 
@@ -29,7 +36,14 @@ namespace TimeControl
 
         public virtual void TimeUpdate()
         {
+            
+        }
 
+
+        public virtual void AnimationUpdate() 
+        { 
+            
+        
         }
     }
 

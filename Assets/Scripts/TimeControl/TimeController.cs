@@ -26,6 +26,7 @@ namespace TimeControl{
             public Vector2 pos;
             public Vector2 vel;
             public bool renderer;
+            public float animationTime;
         }
 
         RecordedData[,] recordedData = null;
@@ -45,6 +46,9 @@ namespace TimeControl{
         private int recordCount;
         private int recordIndex;
 
+
+        private bool pause;
+        private bool stepBack;
 
         TimeControlled[] timeObjects;
 
@@ -68,8 +72,8 @@ namespace TimeControl{
         {
             if (recordCount < recordMax)
             {
-                bool pause = Input.GetKey(KeyCode.Space);
-                bool stepBack = Input.GetKey(KeyCode.B);
+                pause = Input.GetKey(KeyCode.Space);
+                stepBack = Input.GetKey(KeyCode.B);
 
                 if (stepBack)
                 {
@@ -83,6 +87,8 @@ namespace TimeControl{
 
                     }
 
+
+                    //playback data
                     for (int objectIndex = 0; objectIndex < timeObjects.Length; objectIndex++)
                     {
                         TimeControlled timeObject = timeObjects[objectIndex];
@@ -91,11 +97,13 @@ namespace TimeControl{
                         timeObject.transform.position = data.pos;
                         timeObject.velocity = data.vel;
                         timeObject.meshRenderer = data.renderer;
+                        timeObject.animTime = data.animationTime;
                     }
 
                     foreach (TimeControlled timeObject in timeObjects)
                     {
                         timeObject.TimeUpdate();
+                        timeObject.AnimationUpdate();
                     }
 
                 }
@@ -113,6 +121,7 @@ namespace TimeControl{
                             timeObject.transform.position = data.pos;
                             timeObject.velocity = data.vel;
                             timeObject.meshRenderer = data.renderer;
+                            timeObject.animTime = data.animationTime;
                         }
                     }
 
@@ -137,6 +146,7 @@ namespace TimeControl{
                         data.pos = timeObject.transform.position;
                         data.vel = timeObject.velocity;
                         data.renderer = timeObject.meshRenderer;
+                        data.animationTime = timeObject.animTime;
 
                         recordedData[objectIndex, recordCount] = data;
 
@@ -150,6 +160,7 @@ namespace TimeControl{
                     foreach (TimeControlled timeObject in timeObjects)
                     {
                         timeObject.TimeUpdate();
+                        timeObject.AnimationUpdate();
                     }
                 }
             }

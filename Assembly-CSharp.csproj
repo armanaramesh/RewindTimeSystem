@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\TimeControl\TimeController.cs" />
     <Compile Include="Assets\Scripts\TimeControl\Player.cs" />
     <Compile Include="Assets\Scripts\TimeControl\SettingTab.cs" />
+    <Compile Include="Assets\Scripts\TimeControl\Arissa.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
